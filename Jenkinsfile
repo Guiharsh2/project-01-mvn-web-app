@@ -17,6 +17,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building application...'
+                dir('my-web-app')
                 sh 'mvn clean install -Dmaven.test.skip=true'
             }
         }
