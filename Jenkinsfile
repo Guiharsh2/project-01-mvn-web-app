@@ -26,7 +26,9 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running unit tests...'
-                sh 'mvn test'
+                dir('/root/project-01-mvn-web-app/my-web-app') {
+                    sh 'mvn test'
+                }
             }
         }
 
